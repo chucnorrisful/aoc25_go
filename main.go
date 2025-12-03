@@ -5,13 +5,17 @@ import (
 	"io"
 	"os"
 	"strings"
+	"time"
 )
 
 const results = true
 const verbose = true
 
 func main() {
+	st := time.Now()
 	d2()
+
+	fmt.Printf("\n%.2fs elapsed\n", time.Since(st).Seconds())
 }
 
 func readFileAsLines(day, part int) []string {
