@@ -29,12 +29,11 @@ func d1() {
 
 		for val > 0 {
 			dial2 = (dial2 + 1*dir) % 100
-			val = val - 1
+			val--
 			if dial2 == 0 {
 				zCnt2++
 			}
 		}
-
 	}
 
 	p(r, zCnt1)

@@ -13,11 +13,15 @@ const verbose = true
 
 func main() {
 	st := time.Now()
-	d1()
-	d2()
-	d3()
+	defer func() {
+		fmt.Printf("\n%v elapsed\n", time.Since(st))
+	}()
 
-	fmt.Printf("\n%v elapsed\n", time.Since(st))
+	//d1()
+	//d2()
+	//d3()
+	d4()
+
 }
 
 func readFileAsLines(day, part int) []string {

@@ -1,6 +1,8 @@
 package main
 
-import "math"
+import (
+	"math"
+)
 
 func d3() {
 
@@ -27,8 +29,8 @@ func highestNJoltage(bank []byte, n int) int {
 
 	leadingInd := -1
 	for i := n - 1; i >= 0; i-- {
-		highest := 0
 		shortBank := bank[leadingInd+1 : len(bank)-i]
+		highest := 0
 		for ind, jolt := range shortBank {
 			if int(jolt) > highest {
 				highestInds[i] = ind + leadingInd + 1
