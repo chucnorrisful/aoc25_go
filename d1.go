@@ -7,8 +7,10 @@ import (
 func d1() {
 	input := readFileAsLines(1, 1)
 
-	zCnt := 0
-	dial := 50
+	zCnt1 := 0
+	zCnt2 := 0
+	dial1 := 50
+	dial2 := 50
 	for _, in := range input {
 		dir := -1
 		if in[0] == 'R' {
@@ -20,16 +22,21 @@ func d1() {
 			panic(err)
 		}
 
+		dial1 = (dial1 + val*dir) % 100
+		if dial1 == 0 {
+			zCnt1++
+		}
+
 		for val > 0 {
-			dial = (dial + 1*dir) % 100
+			dial2 = (dial2 + 1*dir) % 100
 			val = val - 1
-			if dial == 0 {
-				zCnt++
+			if dial2 == 0 {
+				zCnt2++
 			}
 		}
 
-		//dial = (dial + val*dir) % 100
 	}
 
-	p(r, zCnt)
+	p(r, zCnt1)
+	p(r, zCnt2)
 }

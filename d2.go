@@ -10,7 +10,7 @@ func d2() {
 	input := readFileAsLines(2, 1)
 
 	agg := 0
-	agg2 := uint64(0)
+	agg2 := 0
 	for _, raw := range strings.Split(input[0], ",") {
 		pair := strings.Split(raw, "-")
 
@@ -22,7 +22,7 @@ func d2() {
 				agg += start
 			}
 			if isRepeatingNumber(start) {
-				agg2 += uint64(start)
+				agg2 += start
 			}
 
 			start++

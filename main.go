@@ -13,9 +13,11 @@ const verbose = true
 
 func main() {
 	st := time.Now()
+	d1()
 	d2()
+	d3()
 
-	fmt.Printf("\n%.2fs elapsed\n", time.Since(st).Seconds())
+	fmt.Printf("\n%v elapsed\n", time.Since(st))
 }
 
 func readFileAsLines(day, part int) []string {
@@ -39,9 +41,12 @@ const (
 )
 
 func p(l level, vals ...any) {
+	if !results {
+		return
+	}
 	if verbose && l == d {
 		fmt.Println("DEBUG:", fmt.Sprint(vals...))
-	} else if results && l == r {
+	} else if l == r {
 		fmt.Println("RESULT:", fmt.Sprint(vals...))
 	}
 }
