@@ -11,7 +11,7 @@ func d3() {
 	for _, bankRaw := range input {
 		bank := []byte(bankRaw)
 		for i := 0; i < len(bank); i++ {
-			bank[i] -= 48 //convert ascii
+			bank[i] -= '0' //convert ascii
 		}
 
 		agg += naiveHighest2Joltage(bank)
