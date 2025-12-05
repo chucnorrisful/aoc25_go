@@ -20,12 +20,13 @@ func main() {
 	//d1()
 	//d2()
 	//d3()
-	d4()
+	//d4()
+	d5()
 
 }
 
-func readFileAsLines(day, part int) []string {
-	f, err := os.OpenFile(fmt.Sprintf("inputs/%v_%v.txt", day, part), os.O_RDONLY, os.ModePerm)
+func readFileAsLines(day, ver int) []string {
+	f, err := os.OpenFile(fmt.Sprintf("inputs/%v_%v.txt", day, ver), os.O_RDONLY, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
