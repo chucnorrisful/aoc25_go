@@ -5,24 +5,24 @@ func d4() {
 
 	yBound := len(input)
 	xBound := len(input[0])
-	grid := make([][]int, 0)
-	grid3 := make([][]int, 0)
+	grid1 := make([][]int, 0)
+	grid2 := make([][]int, 0)
 	for range yBound {
-		grid = append(grid, make([]int, xBound))
-		grid3 = append(grid3, make([]int, xBound))
+		grid1 = append(grid1, make([]int, xBound))
+		grid2 = append(grid2, make([]int, xBound))
 	}
 
 	for y, line := range input {
 		for x, ele := range line {
 			if ele == '@' {
-				grid[y][x] = -1
-				grid3[y][x] = -1
+				grid1[y][x] = -1
+				grid2[y][x] = -1
 			}
 		}
 	}
 
-	cntSt3Nb3 := 0
-	for y, line := range grid3 {
+	pt1Cnt := 0
+	for y, line := range grid1 {
 		for x, ele := range line {
 			if ele != -1 {
 				continue
@@ -37,14 +37,14 @@ func d4() {
 						continue
 					}
 
-					if grid3[checkY][checkX] == -1 {
+					if grid1[checkY][checkX] == -1 {
 						cnt++
 					}
 				}
 			}
 
 			if cnt < 4 {
-				cntSt3Nb3++
+				pt1Cnt++
 			}
 		}
 	}
@@ -53,7 +53,7 @@ func d4() {
 	cntSt3NbAll := 0
 	for {
 		cntSt3Nb := 0
-		for y, line := range grid {
+		for y, line := range grid2 {
 			for x, ele := range line {
 				if ele != -1 {
 					continue
@@ -68,7 +68,7 @@ func d4() {
 							continue
 						}
 
-						if grid[checkY][checkX] == -1 {
+						if grid2[checkY][checkX] == -1 {
 							cnt++
 						}
 					}
@@ -76,7 +76,7 @@ func d4() {
 
 				if cnt < 4 {
 					cntSt3Nb++
-					grid[y][x] = iter
+					grid2[y][x] = iter
 				}
 			}
 		}
@@ -88,6 +88,6 @@ func d4() {
 	}
 
 	p(d, iter)
-	p(r, cntSt3Nb3)
+	p(r, pt1Cnt)
 	p(r, cntSt3NbAll)
 }
