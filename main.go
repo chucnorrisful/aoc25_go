@@ -20,9 +20,9 @@ func main() {
 	//d1()
 	//d2()
 	//d3()
-	d4()
+	//d4()
 	//d5()
-
+	d6()
 }
 
 func readFileAsLines(day, ver int) []string {
